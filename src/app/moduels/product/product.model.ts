@@ -15,6 +15,8 @@ const inventorySchema = new Schema<Inventory>({
     required: true,
   },
 });
+
+//main schema below
 const productSchema = new Schema<Product>({
   name: { type: String, required: true },
   description: { type: String, required: true },
@@ -24,3 +26,5 @@ const productSchema = new Schema<Product>({
   variants: [variantSchema],
   inventory: inventorySchema,
 });
+
+const Product = model<Product>('Product', productSchema);
