@@ -4,8 +4,8 @@ import { truncateSync } from 'fs';
 
 const createProduct = async (req: Request, res: Response) => {
   try {
-    const product = req.body;
-    const result = await ProductServices.createProductIntoDB(product);
+    const { product: productData } = req.body;
+    const result = await ProductServices.createProductIntoDB(productData);
     res.status(200).json({
       success: true,
       message: 'Product is created successfully',
