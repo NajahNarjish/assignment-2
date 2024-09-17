@@ -88,7 +88,6 @@ const deleteSingleProduct = async (req: Request, res: Response) => {
 //  search product
 const searchProduct = async (req: Request, res: Response) => {
   const { searchQuery } = req.query;
-  console.log('you print here: ' + searchQuery);
   try {
     const result = await ProductServices.searchProductFromDB(searchQuery);
 
@@ -108,7 +107,8 @@ const searchProduct = async (req: Request, res: Response) => {
     console.log('failed to search product', err);
   }
 };
-// search product ends
+
+// trying to search product ends
 
 export const ProductControllers = {
   createProduct,

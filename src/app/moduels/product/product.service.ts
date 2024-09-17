@@ -16,7 +16,6 @@ const getSingleProductFromDB = async (_id: string) => {
 
 // trying update
 const updateSingleProductFromDB = async (_id: string, updateData: any) => {
-  // const result = await ProductModel.updateOne({ _id });
   const result = await ProductModel.findByIdAndUpdate(_id, updateData, {
     new: true,
   });
@@ -26,7 +25,6 @@ const updateSingleProductFromDB = async (_id: string, updateData: any) => {
 
 // trying delete
 const deleteSingleProductFromDB = async (_id: string) => {
-  // const result = await ProductModel.updateOne({ _id });
   const result = await ProductModel.findByIdAndDelete({ _id });
   return result;
 };
